@@ -8,11 +8,15 @@ export function GlobalProvider({children}) {
   const [lang, setLang] = useState('ru');
   const [avatar, setAvatar] = useState(null);
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
 
   const getLocale = async () => {
     const language = await AsyncStorage.getItem('language');
     const localAvatar = await AsyncStorage.getItem('avatar');
     const localName = await AsyncStorage.getItem('name');
+    const localPhone = await AsyncStorage.getItem('phone');
+    const localAddress = await AsyncStorage.getItem('address');
     if (language) {
       setLang(language);
     }
@@ -23,6 +27,14 @@ export function GlobalProvider({children}) {
 
     if (localName) {
       setName(localName);
+    }
+
+    if (localPhone) {
+      setPhone(localPhone);
+    }
+
+    if (localAddress) {
+      setAddress(localAddress);
     }
   };
 
@@ -41,6 +53,10 @@ export function GlobalProvider({children}) {
         setAvatar,
         name,
         setName,
+        phone,
+        setPhone,
+        address,
+        setAddress,
       }}>
       {children}
     </GlobalContext.Provider>

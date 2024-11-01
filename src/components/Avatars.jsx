@@ -12,15 +12,14 @@ import {avatars} from '../helpers/avatars';
 import {GlobalContext} from './GlobalContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {COLORS} from '../helpers/colors';
+import CustomButton from './CustomButton';
 
-export default function Avatars({modalVisible, setModalVisible}) {
-  const {avatar, setAvatar} = useContext(GlobalContext);
-  const avatarArray = [1, 4, 7, 10, 13];
+export default function Avatars({modalVisible, setModalVisible, translations}) {
+  const {avatar, setAvatar, lang} = useContext(GlobalContext);
 
   const setNewAvatar = name => {
     AsyncStorage.setItem('avatar', name).then(r => console.log(r));
     setAvatar(name);
-    setModalVisible(!modalVisible);
   };
 
   return (
@@ -40,18 +39,21 @@ export default function Avatars({modalVisible, setModalVisible}) {
                 {avatars?.map((item, index) => (
                   <TouchableOpacity
                     key={index}
-                    style={styles.avatarContainer}
+                    style={
+                      avatar === item?.name
+                        ? styles.avatarContainerActive
+                        : styles.avatarContainer
+                    }
                     onPress={() => setNewAvatar(item?.name)}>
-                    <Image
-                      source={item.image}
-                      style={
-                        avatarArray.includes(index)
-                          ? styles.avatarSelectedImage
-                          : styles.avatarImage
-                      }
-                    />
+                    <Image source={item.image} style={styles.avatarImage} />
                   </TouchableOpacity>
                 ))}
+
+                <CustomButton
+                  text={translations.find(item => item?.en === 'Save')[lang]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                  style={{marginTop: 50}}
+                />
               </ScrollView>
             </View>
           </View>
@@ -93,13 +95,13 @@ const styles = StyleSheet.create({
   },
   content: {
     width: '100%',
-    height: '80%',
+    height: '70%',
     alignSelf: 'center',
-    backgroundColor: COLORS.card,
+    backgroundColor: COLORS.white,
     zIndex: 101,
     borderRadius: 20,
-    borderColor: COLORS.black,
-    borderWidth: 5,
+    borderColor: COLORS.priceTextColor,
+    borderWidth: 2,
     marginTop: 20,
   },
   scrollView: {
@@ -113,13 +115,8 @@ const styles = StyleSheet.create({
     marginVertical: 30,
   },
   avatarImage: {
-    width: Dimensions.get('window').width / 5,
-    height: Dimensions.get('window').width / 5,
-    objectFit: 'contain',
-  },
-  avatarSelectedImage: {
-    width: Dimensions.get('window').width / 3.7,
-    height: Dimensions.get('window').width / 3.7,
+    width: Dimensions.get('window').width / 4.5,
+    height: Dimensions.get('window').width / 4.5,
     objectFit: 'contain',
   },
   avatarContainer: {
@@ -128,11 +125,12 @@ const styles = StyleSheet.create({
   avatarContainerActive: {
     margin: 5,
     borderWidth: 5,
-    borderColor: 'white',
-    borderRadius: 50,
+    borderColor: COLORS.priceTextColor,
+    borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+    padding: 2,
   },
   circle: {
     backgroundColor: '#870C9D',

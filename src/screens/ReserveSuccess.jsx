@@ -14,10 +14,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {COLORS, FONTS} from '../helpers/colors';
+import ReserveImage from '../assets/image/reserve_image.png';
 
 const {width, height} = Dimensions.get('window');
-export default function CartSuccess({route}) {
-  const {qrImage} = route.params;
+export default function ReserveSuccess({route}) {
   const {lang} = useContext(GlobalContext);
   const [translations, setTranslations] = useState([]);
   const getLanguagesRequest = useGetRequest({url: TRANSLATE});
@@ -38,25 +38,22 @@ export default function CartSuccess({route}) {
         <Header />
 
         <View style={styles.main}>
-          {qrImage ? (
-            <View style={styles.qrContainer}>
-              <Image source={{uri: qrImage}} style={styles.qrImage} />
-            </View>
-          ) : (
-            ''
-          )}
-
           {translations?.length ? (
             <Text style={styles.text}>
               {
                 translations.find(
-                  item => item?.en === 'Show this code to the waiter',
+                  item =>
+                    item?.en === 'Your table has been successfully booked!',
                 )[lang]
               }
             </Text>
           ) : (
             ''
           )}
+
+          <View style={styles.qrContainer}>
+            <Image source={ReserveImage} style={styles.qrImage} />
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -65,7 +62,6 @@ export default function CartSuccess({route}) {
 
 const styles = StyleSheet.create({
   qrContainer: {
-    backgroundColor: 'white',
     width: width / 2.5,
     height: width / 2.5,
     alignSelf: 'center',
@@ -74,9 +70,10 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   qrImage: {
-    width: width / 3,
-    height: width / 3,
+    width: width / 2,
+    height: width / 2,
     alignSelf: 'center',
+    marginTop: 50,
   },
   text: {
     color: COLORS.green,

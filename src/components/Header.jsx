@@ -1,8 +1,16 @@
-import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
-import BackIcon from '../images/others/back.png';
-import DrawerIcon from '../images/others/burger.png';
+import React, {useContext} from 'react';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Text,
+  Platform,
+} from 'react-native';
+import DrawerIcon from '../assets/icon/drawer_icon.png';
 import {useNavigation} from '@react-navigation/native';
+import {GlobalContext} from './GlobalContext';
+import {COLORS, FONTS} from '../helpers/colors';
 
 export default function Header({
   background,
@@ -11,18 +19,35 @@ export default function Header({
   route = null,
 }) {
   const navigation = useNavigation();
+  const {lang} = useContext(GlobalContext);
+  const translations = {
+    de: 'Zurück',
+    en: 'Back',
+    es: 'Atrás',
+    fr: 'Retour',
+    it: 'Indietro',
+    pl: 'Wstecz',
+    ru: 'Назад',
+    sw: 'Tillbaka',
+  };
+
   return (
     <View style={[styles.container, {backgroundColor: background}]}>
-      <TouchableOpacity
-        onPress={() => {
-          if (route) {
-            navigation.navigate(route);
-          } else {
-            navigation.goBack();
-          }
-        }}>
-        {back ? <Image source={BackIcon} style={styles.backIcon} /> : ''}
-      </TouchableOpacity>
+      {back ? (
+        <TouchableOpacity
+          onPress={() => {
+            if (route) {
+              navigation.navigate(route);
+            } else {
+              navigation.goBack();
+            }
+          }}
+          style={styles.backContainer}>
+          <Text style={styles.backText}>{translations[lang]}</Text>
+        </TouchableOpacity>
+      ) : (
+        <View />
+      )}
 
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
         {drawer ? <Image source={DrawerIcon} style={styles.drawerIcon} /> : ''}
@@ -39,6 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
+    marginTop: Platform.OS === 'ios' ? 45 : 20,
   },
   backIcon: {
     width: 25,
@@ -49,5 +75,20 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     objectFit: 'contain',
+  },
+  backContainer: {
+    marginLeft: '10%',
+    backgroundColor: COLORS.brownFill,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: COLORS.brown,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  backText: {
+    fontSize: 22,
+    fontFamily: FONTS.bold,
+    color: COLORS.brown,
+    lineHeight: 28,
   },
 });

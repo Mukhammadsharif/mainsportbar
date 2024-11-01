@@ -22,7 +22,7 @@ export default function Loading({modalVisible, setModalVisible}) {
           <View style={styles.modalView}>
             <ActivityIndicator
               size={'large'}
-              color={COLORS.main}
+              color={COLORS.brown}
               style={styles.icon}
             />
           </View>

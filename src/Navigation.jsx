@@ -18,22 +18,24 @@ import {GlobalContext} from './components/GlobalContext';
 import {useGetRequest} from './helpers/hooks';
 import {COLORS, FONTS} from './helpers/colors';
 import {TRANSLATE} from './helpers/urls';
-import BackgroundImage from './images/backgrounds/account.png';
-import HeaderImage from './images/others/logo.png';
-import CloseIcon from './images/others/close_icon.png';
-import Main from './pages/Main';
-import LinearGradient from 'react-native-linear-gradient';
-import Cart from './pages/Cart';
-import Account from './pages/Account';
-import CartConfirm from './pages/CartConfirm';
-import Translations from './pages/Translations';
-import Reserve from './pages/Reserve';
-import ReserveConfirm from './pages/ReserveConfirm';
-import Events from './pages/Events';
-import Meal from './pages/Meal';
-import Ice from './pages/Ice';
-import Football from './pages/Football';
-import Basketball from './pages/Basketball';
+import Main from './screens/Main';
+import CloseIcon from './assets/icon/close.png';
+import BackgroundImage from './assets/image/main_background.png';
+import HeaderImage from './assets/image/header_image.png';
+import MenuBackgroundImage from './assets/image/inactive_menu.png';
+import Menu from './screens/Menu';
+import ProductDetail from './screens/ProductDetail';
+import Profile from './screens/Profile';
+import Cart from './screens/Cart';
+import CartSuccess from './screens/CartSuccess';
+import Reserve from './screens/Reserve';
+import ReserveSuccess from './screens/ReserveSuccess';
+import Translations from './screens/Translations';
+import Events from './screens/Events';
+import India from './screens/India';
+import Football from './screens/Football';
+import Kinder from './screens/Kinder';
+import Party from './screens/Party';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -64,17 +66,19 @@ function DrawerNavigator() {
       }}
       drawerContent={props => <CustomDrawerNavigator {...props} />}>
       <Drawer.Screen name="Main" component={Main} />
+      <Drawer.Screen name="Menu" component={Menu} />
+      <Drawer.Screen name="ProductDetail" component={ProductDetail} />
+      <Drawer.Screen name="Profile" component={Profile} />
       <Drawer.Screen name="Cart" component={Cart} />
-      <Drawer.Screen name="Account" component={Account} />
-      <Drawer.Screen name="CartConfirm" component={CartConfirm} />
-      <Drawer.Screen name="Translations" component={Translations} />
+      <Drawer.Screen name="CartSuccess" component={CartSuccess} />
       <Drawer.Screen name="Reserve" component={Reserve} />
-      <Drawer.Screen name="ReserveConfirm" component={ReserveConfirm} />
+      <Drawer.Screen name="ReserveSuccess" component={ReserveSuccess} />
+      <Drawer.Screen name="Translations" component={Translations} />
       <Drawer.Screen name="Events" component={Events} />
-      <Drawer.Screen name="Meal" component={Meal} />
-      <Drawer.Screen name="Ice" component={Ice} />
+      <Drawer.Screen name="India" component={India} />
       <Drawer.Screen name="Football" component={Football} />
-      <Drawer.Screen name="Basketball" component={Basketball} />
+      <Drawer.Screen name="Kinder" component={Kinder} />
+      <Drawer.Screen name="Party" component={Party} />
     </Drawer.Navigator>
   );
 }
@@ -114,79 +118,79 @@ function CustomDrawerNavigator(props) {
             <TouchableOpacity
               onPress={() => navigation.navigate('Main')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Home')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('Reserve')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Booking')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('Events')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Events')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('Translations')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Broadcasts')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('Cart')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Cart')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.navigate('Account')}
+              onPress={() => navigation.navigate('Profile')}
               style={styles.drawerItem}>
-              <LinearGradient
-                colors={['#0099FF', '#0C033A']}
-                locations={[0, 0.94]}
-                style={styles.gradient}>
+              <ImageBackground
+                source={MenuBackgroundImage}
+                style={styles.drawerImage}
+                imageStyle={styles.drawerImageStyle}>
                 <Text style={styles.itemText}>
                   {translations.find(item => item?.en === 'Account')[lang]}
                 </Text>
-              </LinearGradient>
+              </ImageBackground>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -202,12 +206,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width,
     height: height,
-    alignItems: 'center',
   },
   drawerLogo: {
-    width: width / 2,
-    height: width / 2.7,
-    marginBottom: 20,
+    width: width / 1.5,
+    height: width / 1.5,
+    objectFit: 'contain',
+    alignSelf: 'flex-end',
   },
   mainContainer: {
     marginTop: 30,
@@ -215,14 +219,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   drawerItem: {
-    height: 60,
+    height: 50,
     marginTop: 15,
     width: '60%',
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: COLORS.brown,
   },
   itemText: {
-    fontSize: 25,
+    fontSize: 22,
     fontFamily: FONTS.bold,
-    color: COLORS.white,
+    color: COLORS.brown,
+    lineHeight: 28,
   },
   closeIconContainer: {
     position: 'absolute',
@@ -232,15 +240,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   close: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
   },
-  gradient: {
+  drawerImage: {
     flex: 1,
     width: '100%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  drawerImageStyle: {
     borderRadius: 12,
   },
 });

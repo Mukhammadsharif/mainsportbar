@@ -12,8 +12,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		223219EB718F42E79E50EC66 /* a_JasperCaps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65C47882DAC14257A288BB0A /* a_JasperCaps.ttf */; };
+		6D23D2A72BA44D14916E3D56 /* a_JasperCapsNr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA49F6AF981F42DA95D03EB4 /* a_JasperCapsNr.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-mainsportbar-mainsportbarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-mainsportbar-mainsportbarTests.a */; };
+		7A15847806F242A2B582B168 /* a_JasperCapsSh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 319D63F6641D49C783921AC0 /* a_JasperCapsSh.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A197FEDEE64491B980A876A /* a_JasperCapsOtlNr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B66F4545B0B44020984EBFC4 /* a_JasperCapsOtlNr.ttf */; };
+		AE65EE4CC0E340FA81CA5B43 /* ArchivoBlack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4A6BFAD29431EBEC8D616 /* ArchivoBlack-Regular.ttf */; };
 		DE5BC9367811DEC89C552B8D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +44,17 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mainsportbar/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = mainsportbar/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-mainsportbar-mainsportbarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mainsportbar-mainsportbarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		319D63F6641D49C783921AC0 /* a_JasperCapsSh.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = a_JasperCapsSh.ttf; path = ../assets/fonts/a_JasperCapsSh.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-mainsportbar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mainsportbar.debug.xcconfig"; path = "Target Support Files/Pods-mainsportbar/Pods-mainsportbar.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB4A6BFAD29431EBEC8D616 /* ArchivoBlack-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "ArchivoBlack-Regular.ttf"; path = "../assets/fonts/ArchivoBlack-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-mainsportbar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mainsportbar.release.xcconfig"; path = "Target Support Files/Pods-mainsportbar/Pods-mainsportbar.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-mainsportbar-mainsportbarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mainsportbar-mainsportbarTests.debug.xcconfig"; path = "Target Support Files/Pods-mainsportbar-mainsportbarTests/Pods-mainsportbar-mainsportbarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-mainsportbar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mainsportbar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C47882DAC14257A288BB0A /* a_JasperCaps.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = a_JasperCaps.ttf; path = ../assets/fonts/a_JasperCaps.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mainsportbar/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-mainsportbar-mainsportbarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mainsportbar-mainsportbarTests.release.xcconfig"; path = "Target Support Files/Pods-mainsportbar-mainsportbarTests/Pods-mainsportbar-mainsportbarTests.release.xcconfig"; sourceTree = "<group>"; };
+		B66F4545B0B44020984EBFC4 /* a_JasperCapsOtlNr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = a_JasperCapsOtlNr.ttf; path = ../assets/fonts/a_JasperCapsOtlNr.ttf; sourceTree = "<group>"; };
+		DA49F6AF981F42DA95D03EB4 /* a_JasperCapsNr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = a_JasperCapsNr.ttf; path = ../assets/fonts/a_JasperCapsNr.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -125,6 +135,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B3E3A30489AB4685AABEF5EB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -138,6 +149,19 @@
 				00E356EE1AD99517003FC87E /* mainsportbarTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3E3A30489AB4685AABEF5EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BB4A6BFAD29431EBEC8D616 /* ArchivoBlack-Regular.ttf */,
+				65C47882DAC14257A288BB0A /* a_JasperCaps.ttf */,
+				DA49F6AF981F42DA95D03EB4 /* a_JasperCapsNr.ttf */,
+				B66F4545B0B44020984EBFC4 /* a_JasperCapsOtlNr.ttf */,
+				319D63F6641D49C783921AC0 /* a_JasperCapsSh.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -247,6 +271,11 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				DE5BC9367811DEC89C552B8D /* PrivacyInfo.xcprivacy in Resources */,
+				AE65EE4CC0E340FA81CA5B43 /* ArchivoBlack-Regular.ttf in Resources */,
+				223219EB718F42E79E50EC66 /* a_JasperCaps.ttf in Resources */,
+				6D23D2A72BA44D14916E3D56 /* a_JasperCapsNr.ttf in Resources */,
+				8A197FEDEE64491B980A876A /* a_JasperCapsOtlNr.ttf in Resources */,
+				7A15847806F242A2B582B168 /* a_JasperCapsSh.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

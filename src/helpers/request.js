@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const backendUrl = 'https://firstworldsportpub.website/';
+export const backendUrl = 'https://mainsportbar.website/';
 
 export const domain = backendUrl.endsWith('/')
   ? backendUrl.substr(0, backendUrl.length - 1)
