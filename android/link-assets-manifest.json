@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/ArchivoBlack-Regular.ttf",
+      "sha1": "5b6c44432da2e1330ad30153eddf98c739013b88"
+    },
+    {
+      "path": "assets/fonts/a_JasperCaps.ttf",
+      "sha1": "11cbe93cbb244c906c49f1bd78192b208532f78b"
+    },
+    {
+      "path": "assets/fonts/a_JasperCapsNr.ttf",
+      "sha1": "64d35c4a7c124b518e7f4cf0b4697ac30c5a7329"
+    },
+    {
+      "path": "assets/fonts/a_JasperCapsOtlNr.ttf",
+      "sha1": "576ce94abc0e24ac1198541d0aa96ff63fd4d595"
+    },
+    {
+      "path": "assets/fonts/a_JasperCapsSh.ttf",
+      "sha1": "917d3b86bfe2a3fb90bdfbe56f40d114d48596e4"
+    }
+  ]
+}
